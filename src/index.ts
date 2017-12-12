@@ -3,8 +3,8 @@ import { resolve } from "url"
 import { load as cheerio } from "cheerio"
 
 const baseUrl = "https://duwo.multiposs.nl/"
-const sessionUrlRegExp = /^\s*document\.location = '(.+)';\s*$/gmiu
-const qrIdRegExp = /^\s*"text": "(.+)"\s*$/gmiu
+const sessionUrlRegExp = /^\s*document\.location = '(.+)';\s*$/miu
+const qrIdRegExp = /^\s*"text": "(.+)"\s*$/miu
 
 export default class Multiposs {
   constructor(
