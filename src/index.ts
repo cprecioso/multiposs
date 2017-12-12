@@ -2,22 +2,23 @@ import * as request from "request-promise-native"
 import { resolve } from "url"
 import { load as cheerio } from "cheerio"
 
-const baseUrl = "https://duwo.multiposs.nl/"
 const sessionUrlRegExp = /^\s*document\.location = '(.+)';\s*$/miu
 const qrIdRegExp = /^\s*"text": "(.+)"\s*$/miu
 
 export default class Multiposs {
   constructor(
+    public readonly baseUrl: string,
     private readonly _username: string,
     private readonly _password: string
-  ) { }
+  ) {
+    this._request = request.defaults({
+      baseUrl,
+      followRedirect: true,
+      jar: true
+    })
+  }
 
-
-  private _request = request.defaults({
-    baseUrl,
-    followRedirect: true,
-    jar: true
-  })
+  private readonly _request: typeof request
 
   private _loggedIn?: Promise<boolean>
   get loggedIn() {
