@@ -1,15 +1,29 @@
 {
   "name": "multiposs",
   "version": "0.0.3",
+  "description": "API to interact with the Duwo Multiposs laundry website",
+  "homepage": "https://github.com/cprecioso/multiposs#readme",
+  "bugs": {
+    "url": "https://github.com/cprecioso/multiposs/issues"
+  },
+  "license": "MIT",
+  "author": "Carlos Precioso <kalprestito@gmail.com>",
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cprecioso/multiposs.git"
+  },
   "scripts": {
     "prepublish": "rm -rf lib; tsc",
     "watch": "rm -rf lib; tsc --watch"
   },
-  "files": [
-    "lib"
-  ],
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "request": "^2.83.0",
